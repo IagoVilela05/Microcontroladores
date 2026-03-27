@@ -46,42 +46,32 @@ retfie
 psect mainFunc,global,class=CODE,delta=2
 mainFunc:
 ;inserir código aqui
-    nop
-    BCF PORTA, PORTA_RA2_POSITION
-    BCF STATUS, STATUS_RP1_POSITION
-    BCF STATUS, STATUS_RP0_POSITION  ;BANK 0
-    BCF STATUS, STATUS_RP1_POSITION
-    BSF STATUS, STATUS_RP0_POSITION  ;BANK 1
-    MOVLW 11111011B
-    MOVWF TRISA
     BSF STATUS, STATUS_RP1_POSITION
+    BSF STATUS, STATUS_RP0_POSITION 
+    CLRF ANSEL
+    CLRF ANSELH
+    BCF STATUS, STATUS_RP1_POSITION    
     BSF STATUS, STATUS_RP0_POSITION
-    BCF ANSEL, ANSEL_ANS2_POSITION
-    BCF STATUS, STATUS_RP1_POSITION
+    BSF TRISA,0
+    BCF TRISB,0
+    BCF STATUS, STATUS_RP1_POSITION    
     BCF STATUS, STATUS_RP0_POSITION
+    BSF PORTB, 0 ; NIVEL LOGICO BAIXO
+
+ 
 loop:
 ;inserir código aqui
-    MOVLW 00000100B
-    XORWF PORTA,F
-    CALL Delay_500ms
-GOTO loop
+    BTFSS PORTA ,0 
+    GOTO desligaLed
+ligaLed:
+    BSF PORTB , 0 
+    GOTO loop
+desligaLed: 
+    BCF PORTB, 0 
+    GOTO loop
+
 ;inserir código aqui
-Delay_500ms:
-    MOVLW   0x06        ; 
-    MOVWF   VAR1
-    MOVLW   0x09        ; 
-    MOVWF   VAR2
-    MOVLW   0x10        ; 
-    MOVWF   VAR3
-Delay_Loop:
-    DECFSZ  VAR3, f       ; Inner loop (3 cycles * count)
-    GOTO    Delay_Loop
-    DECFSZ  VAR2, f       ; Middle loop
-    GOTO    Delay_Loop
-    DECFSZ  VAR1, f       ; Outer loop
-    GOTO    Delay_Loop
-    NOP
-    RETURN
+
 END ;fim do programa
 
 
