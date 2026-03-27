@@ -20,6 +20,7 @@
   CONFIG  WRT = OFF             ; Flash Program Memory Self Write Enable bits (Write protection off)
 
 // config statements should precede project file includes.
+<<<<<<< HEAD
     #include <xc.inc>
 ;declaração de variáveis globais no banco 0
     psect globalData,global,class=BANK0,space=1,delta=1,noexec
@@ -36,10 +37,30 @@ psect resetVector,global,class=CODE,delta=2 ; PIC10/12/16
 resetVector:
     nop
     goto mainFunc
+=======
+#include <xc.inc>
+;declaração de variáveis globais no banco 0
+psect globalData,global,class=BANK0,space=1,delta=1,noexec
+global VAR1, VAR2, VAR3
+VAR1: DS 1
+VAR2: DS 1
+VAR3: DS 1
+;declaração de variáveis globais na região shared
+psect globalData1,global,class=COMMON,space=1,delta=1,noexec
+global VAR4, VAR5
+VAR4: DS 1
+VAR5: DS 1
+;declaração da seção de código resetVector
+psect resetVector,global,class=CODE,delta=2 ; PIC10/12/16
+resetVector:
+nop
+goto mainFunc
+>>>>>>> 325ffc38f74c3e2a298e8e30411303a8aecee5f5
 ;declaração da seção de código interruptVector
 psect interruptVector,global,class=CODE,delta=2
 interruptVector:
 ;inserir código aqui
+<<<<<<< HEAD
     retfie
 ;declaração da seção de código mainFunc
 psect mainFunc,global,class=CODE,delta=2
@@ -125,3 +146,40 @@ botao_nao_apertado:
 
 
 
+=======
+retfie
+;declaração da seção de código mainFunc
+psect mainFunc,global,class=CODE,delta=2
+mainFunc:
+;inserir código aqui
+    BSF STATUS, STATUS_RP1_POSITION
+    BSF STATUS, STATUS_RP0_POSITION 
+    CLRF ANSEL
+    CLRF ANSELH
+    
+    BCF STATUS, STATUS_RP1_POSITION    
+    BSF STATUS, STATUS_RP0_POSITION
+    BSF TRISA,0
+    BCF TRISB,0
+    
+    BCF STATUS, STATUS_RP1_POSITION    
+    BCF STATUS, STATUS_RP0_POSITION
+    BSF PORTB, 0 ; NIVEL LOGICO BAIXO
+
+ 
+loop:   
+;inserir código aqui
+    BTFSS PORTA ,0 
+    GOTO desligaLed
+ligaLed:
+    BSF PORTB , 0 
+    GOTO loop
+desligaLed: 
+    BCF PORTB, 0 
+    GOTO loop
+
+   
+;inserir código aqui
+
+END ;fim do programa
+>>>>>>> 325ffc38f74c3e2a298e8e30411303a8aecee5f5

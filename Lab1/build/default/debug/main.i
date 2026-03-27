@@ -2493,6 +2493,7 @@ interruptVector:
 psect mainFunc,global,class=CODE,delta=2
 mainFunc:
     BCF STATUS, STATUS_RP0_POSITION
+<<<<<<< HEAD
     BCF STATUS, STATUS_RP1_POSITION;BANK O
 
     BSF STATUS, STATUS_RP0_POSITION
@@ -2505,11 +2506,23 @@ mainFunc:
     CLRF ANSEL
     CLRF ANSELH
 
+=======
+    BCF STATUS, STATUS_RP1_POSITION;BANKO
+    CLRF PORTA
+    BSF STATUS, STATUS_RP0_POSITION
+    BCF STATUS, STATUS_RP1_POSITION;BANK1
+    BCF TRISA, TRISA_TRISA2_POSITION ;((PORTA) and 07Fh), 2 COMO SAIDA
+    BSF STATUS, STATUS_RP0_POSITION
+    BSF STATUS, STATUS_RP1_POSITION; BANK3
+    MOVLW 11111011B
+    MOVWF ANSEL ;((PORTA) and 07Fh), 2 COMO I/O DIGITAL
+>>>>>>> 325ffc38f74c3e2a298e8e30411303a8aecee5f5
     BCF STATUS, STATUS_RP0_POSITION
     BCF STATUS, STATUS_RP1_POSITION;BANKO
 
 ;inserir código aqui
 
+<<<<<<< HEAD
 loop_inicial:
     BTFSS PORTA, 0
     GOTO botao_nao_apertado
@@ -2568,4 +2581,29 @@ botao_nao_apertado:
     ;GOTO Delay_Loop
     ;NOP
     ;RETURN
+=======
+loop:
+    MOVLW 00000100B
+    XORWF PORTA, F
+    CALL Delay_500ms
+;inserir código aqui
+    GOTO loop
+;inserir código aqui
+Delay_500ms:
+    MOVLW 0x06 ;
+    MOVWF VAR1
+    MOVLW 0x09 ;
+    MOVWF VAR2
+    MOVLW 0x10 ;
+    MOVWF VAR3
+Delay_Loop:
+    DECFSZ VAR3, f ; Inner loop (3 cycles * count)
+    GOTO Delay_Loop
+    DECFSZ VAR2, f ; Middle loop
+    GOTO Delay_Loop
+    DECFSZ VAR1, f ; Outer loop
+    GOTO Delay_Loop
+    NOP
+    RETURN
+>>>>>>> 325ffc38f74c3e2a298e8e30411303a8aecee5f5
     END ;fim do programa
