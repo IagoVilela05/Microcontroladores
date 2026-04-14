@@ -1,0 +1,15 @@
+Delay_500ms:  
+    MOVLW   0x06        ; 
+    MOVWF   VAR1
+    MOVLW   0x09        ; 
+    MOVWF   VAR2
+    MOVLW   0x10        ; 
+    MOVWF   VAR3
+Delay_Loop:
+    DECFSZ  VAR3, f       ; Inner loop (3 cycles * count)
+    GOTO    Delay_Loop
+    DECFSZ  VAR2, f       ; Middle loop
+    GOTO    Delay_Loop
+    DECFSZ  VAR1, f       ; Outer loop
+    GOTO    Delay_Loop
+    NOP  

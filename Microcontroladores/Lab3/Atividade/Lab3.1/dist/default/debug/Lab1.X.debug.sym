@@ -1,0 +1,59 @@
+VAR1 20 0 BANK0 1
+VAR2 21 0 BANK0 1
+VAR3 70 0 COMMON 1
+VAR4 71 0 COMMON 1
+__S0 6 0 ABS 0
+__S1 72 0 ABS 0
+__S3 0 0 ABS 0
+__Hconfig 2009 0 CONFIG 4
+__Lconfig 0 0 CONFIG 4
+__HglobalData A 0 ABS 0
+__LglobalData A 0 ABS 0
+__Hcode A 0 ABS 0
+__Lcode A 0 ABS 0
+__Hdata A 0 ABS 0
+__Ldata A 0 ABS 0
+__Hudata_bank0 A 0 ABS 0
+__Ludata_bank0 A 0 ABS 0
+__HresetVector 2 0 CODE 0
+__LresetVector 0 0 CODE 0
+__HmainFunc A 0 ABS 0
+__LmainFunc A 0 ABS 0
+__Hudata_shr A 0 ABS 0
+__Ludata_shr A 0 ABS 0
+__HinterruptVector 5 0 CODE 0
+__LinterruptVector 4 0 CODE 0
+__H__absolute__ 0 0 ABS 0
+__L__absolute__ 0 0 ABS 0
+__Hedata A 0 ABS 0
+__Ledata A 0 ABS 0
+__Hudata A 0 ABS 0
+__Ludata A 0 ABS 0
+__Hudata_bank1 A 0 ABS 0
+__Ludata_bank1 A 0 ABS 0
+__Hspace_0 A 0 ABS 0
+__Lspace_0 0 0 ABS 0
+__Hspace_1 72 0 ABS 0
+__Lspace_1 0 0 ABS 0
+__Hspace_3 0 0 ABS 0
+__Lspace_3 0 0 ABS 0
+__Hspace_4 4010 0 ABS 0
+__Lspace_4 0 0 ABS 0
+__HglobalData1 A 0 ABS 0
+__LglobalData1 A 0 ABS 0
+__Hudata_bank2 A 0 ABS 0
+__Ludata_bank2 A 0 ABS 0
+__Hudata_bank3 A 0 ABS 0
+__Ludata_bank3 A 0 ABS 0
+%segments
+resetVector 0 3 CODE 0 0
+interruptVector 8 B CODE 8 0
+globalData1 70 71 COMMON 70 1
+globalData 20 21 BANK0 20 1
+%locals
+build/default/debug/main.o
+main.asm
+37 0 0 CODE 0
+38 1 0 CODE 0
+43 4 0 CODE 0
+51 5 0 CODE 0
