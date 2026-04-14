@@ -1,0 +1,135 @@
+Microchip MPLAB XC8 PIC(R) Assembler V2.41
+
+Linker command line:
+
+-W-3 \
+  --edf=C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\dat\20230322214319_en.msgs \
+  -cs -h+dist/default/debug\Lab3.1.debug.sym \
+  --cmf=dist/default/debug\Lab3.1.debug.cmf -z -Q16F887 \
+  -oC:\Users\Aluno\AppData\Local\Temp\xcAs3p8.\driver_tmp_3.o \
+  --fixupoverflow=error -ver=XC8 PIC(R) Assembler --fixupoverflow=lstwarn \
+  -Mdist/default/debug/Lab3.1.debug.map -E1 --acfsm=1493 -ACODE=00h-07FFhx4 \
+  -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
+  -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
+  -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh -ABANK3=0190h-01EFh \
+  -ARAM=020h-06Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh \
+  -AABS1=020h-07Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh -ASFR0=00h-01Fh \
+  -ASFR1=080h-09Fh -ASFR2=0100h-010Fh -ASFR3=0180h-018Fh \
+  -ACONFIG=02007h-02008h -DCONFIG=2 -AIDLOC=02000h-02003h -DIDLOC=2 \
+  -AEEDATA=00h-0FFh/02100h -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 \
+  -DCONST=2 -DENTRY=2 build/default/debug/main.o 
+
+Object code version is 3.11
+
+Machine type is 16F887
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+build/default/debug/main.o
+                mainFunc                            7DF      7DF       21      FBE       0
+                resetVector                         7DD      7DD        2      FBA       0
+                globalData                           20       20        3       20       1
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   CODE           
+                mainFunc                            7DF      7DF       21         0
+                resetVector                         7DD      7DD        2         0
+
+        CLASS   STRCODE        
+
+        CLASS   STRING         
+
+        CLASS   CONST          
+
+        CLASS   ENTRY          
+
+        CLASS   COMMON         
+
+        CLASS   BANK0          
+                globalData                           20       20        3         1
+
+        CLASS   BANK1          
+
+        CLASS   BANK2          
+
+        CLASS   BANK3          
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   SFR2           
+
+        CLASS   SFR3           
+
+        CLASS   CONFIG         
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                globalData                     000020  000003  000023        20       1  BANK0       1
+                resetVector                    0007DD  000002  0007DF       FBA       0  CODE        2
+                mainFunc                       0007DF  000021  000800       FBE       0  CODE        2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            023-06F            4D           1
+        BANK1            0A0-0EF            50           1
+        BANK2            110-16F            60           1
+        BANK3            190-1EF            60           1
+        CODE             000-7DC           7DD           2
+                         800-1FFF           800
+        COMMON           070-07F            10           1
+        CONFIG           2007-2008             2           2
+        CONST            000-7DC           100           2
+                         800-1FFF           100
+        EEDATA           2100-21FF           100           2
+        ENTRY            000-7DC           100           2
+                         800-1FFF           100
+        IDLOC            2000-2003             4           2
+        RAM              023-06F            4D           1
+                         0A0-0EF            50
+                         110-16F            60
+                         190-1EF            60
+        SFR0             000-01F            20           1
+        SFR1             080-09F            20           1
+        SFR2             100-10F            10           1
+        SFR3             180-18F            10           1
+        STRCODE          000-7DC           7DD           2
+                         800-1FFF          1800
+        STRING           000-7DC           100           2
+                         800-1FFF           100
+
+                                  Symbol Table
+
+VAR1            globalData   020  VAR2            globalData   021
+VAR3            globalData   022  __H__absolute__ __absolute__ 000
+__Hcode         code         000  __Hdata         data         000
+__Hedata        edata        000  __HglobalData   globalData   000
+__HmainFunc     mainFunc     000  __HresetVector  resetVector  000
+__Hspace_0      (abs)        800  __Hspace_1      (abs)        023
+__Hspace_3      (abs)        000  __Hudata        udata        000
+__Hudata_bank0  udata_bank0  000  __Hudata_bank1  udata_bank1  000
+__Hudata_bank2  udata_bank2  000  __Hudata_bank3  udata_bank3  000
+__Hudata_shr    udata_shr    000  __L__absolute__ __absolute__ 000
+__Lcode         code         000  __Ldata         data         000
+__Ledata        edata        000  __LglobalData   globalData   000
+__LmainFunc     mainFunc     000  __LresetVector  resetVector  000
+__Lspace_0      (abs)        000  __Lspace_1      (abs)        000
+__Lspace_3      (abs)        000  __Ludata        udata        000
+__Ludata_bank0  udata_bank0  000  __Ludata_bank1  udata_bank1  000
+__Ludata_bank2  udata_bank2  000  __Ludata_bank3  udata_bank3  000
+__Ludata_shr    udata_shr    000  __S0            (abs)        800
+__S1            (abs)        023  __S3            (abs)        000
