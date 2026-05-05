@@ -1,0 +1,215 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/debug/main.o
+resetVector CODE 0 0 0 1 2 1
+mainFunc CODE 0 5 5 39 2 1
+interruptVector CODE 0 4 4 1 2 1
+globalData BANK0 1 20 20 4 1 1
+config CONFIG 4 2007 2007 2 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 24-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 24-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 1-3 2
+CONST 3E-1FFF 2
+ENTRY 1-3 2
+ENTRY 3E-1FFF 2
+IDLOC 2000-2003 2
+CODE 1-3 2
+CODE 3E-1FFF 2
+SFR0 2-7 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 70-7F 1
+EEDATA 2100-21FF 2
+STRCODE 1-3 2
+STRCODE 3E-1FFF 2
+STRING 1-3 2
+STRING 3E-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/debug/main.o
+5 mainFunc CODE >47:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+6 mainFunc CODE >48:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+7 mainFunc CODE >49:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+8 mainFunc CODE >50:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+9 mainFunc CODE >53:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+A mainFunc CODE >54:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+B mainFunc CODE >56:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+C mainFunc CODE >57:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+D mainFunc CODE >58:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+E mainFunc CODE >61:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+F mainFunc CODE >62:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+10 mainFunc CODE >63:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+11 mainFunc CODE >64:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+12 mainFunc CODE >65:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+13 mainFunc CODE >66:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+14 mainFunc CODE >69:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+15 mainFunc CODE >70:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+16 mainFunc CODE >71:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+17 mainFunc CODE >72:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+18 mainFunc CODE >73:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+19 mainFunc CODE >74:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+1A mainFunc CODE >75:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+1B mainFunc CODE >78:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+1C mainFunc CODE >79:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+1D mainFunc CODE >80:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+1E mainFunc CODE >81:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+1F mainFunc CODE >82:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+20 mainFunc CODE >83:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+21 mainFunc CODE >84:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+22 mainFunc CODE >87:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+23 mainFunc CODE >88:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+24 mainFunc CODE >89:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+25 mainFunc CODE >90:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+26 mainFunc CODE >91:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+27 mainFunc CODE >92:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+28 mainFunc CODE >93:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+29 mainFunc CODE >96:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+2A mainFunc CODE >97:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+2B mainFunc CODE >98:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+2C mainFunc CODE >99:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+2D mainFunc CODE >100:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+2E mainFunc CODE >101:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+2F mainFunc CODE >102:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+30 mainFunc CODE >106:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+31 mainFunc CODE >108:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+32 mainFunc CODE >109:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+33 mainFunc CODE >110:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+34 mainFunc CODE >111:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+35 mainFunc CODE >114:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+36 mainFunc CODE >115:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+37 mainFunc CODE >117:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+38 mainFunc CODE >118:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+39 mainFunc CODE >120:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+3A mainFunc CODE >121:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+3B mainFunc CODE >122:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+3C mainFunc CODE >123:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+3D mainFunc CODE >124:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+4 interruptVector CODE >41:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+0 resetVector CODE >35:C:\Users\Aluno\Desktop\PEDRO_IAGO\Lab4.X\main.asm
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Hspace_0 3E 0 ABS 0 - -
+__Hspace_1 24 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 4010 0 ABS 0 - -
+__LinterruptVector 8 0 CODE 0 interruptVector -
+__Hudata_bank0 A 0 ABS 0 udata_bank0 -
+__Hudata_bank1 A 0 ABS 0 udata_bank1 -
+__Hudata_bank2 A 0 ABS 0 udata_bank2 -
+__Hudata_bank3 A 0 ABS 0 udata_bank3 -
+__L__absolute__ 0 0 ABS 0 __absolute__ -
+CONT1 21 0 BANK0 1 globalData build/default/debug/main.o
+CONT2 22 0 BANK0 1 globalData build/default/debug/main.o
+CONT3 23 0 BANK0 1 globalData build/default/debug/main.o
+__HglobalData A 0 ABS 0 globalData -
+__LglobalData A 0 ABS 0 globalData -
+__LresetVector 0 0 CODE 0 resetVector -
+__LmainFunc A 0 ABS 0 mainFunc -
+__Hedata A 0 ABS 0 edata -
+__Hudata A 0 ABS 0 udata -
+__HmainFunc A 0 ABS 0 mainFunc -
+__Hconfig 4012 0 CONFIG 4 config -
+__Ledata A 0 ABS 0 edata -
+__Ludata A 0 ABS 0 udata -
+__Hcode A 0 ABS 0 code -
+__Hdata A 0 ABS 0 data -
+__Lcode A 0 ABS 0 code -
+__Ldata A 0 ABS 0 data -
+__HresetVector 2 0 CODE 0 resetVector -
+__S0 3E 0 ABS 0 - -
+__S1 24 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__Lconfig 0 0 CONFIG 4 config -
+ESTADO 20 0 BANK0 1 globalData build/default/debug/main.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__Ludata_bank0 A 0 ABS 0 udata_bank0 -
+__Ludata_bank1 A 0 ABS 0 udata_bank1 -
+__Ludata_bank2 A 0 ABS 0 udata_bank2 -
+__Ludata_bank3 A 0 ABS 0 udata_bank3 -
+__H__absolute__ 0 0 ABS 0 __absolute__ -
+__HinterruptVector A 0 CODE 0 interruptVector -
+__Hudata_shr A 0 ABS 0 udata_shr -
+__Ludata_shr A 0 ABS 0 udata_shr -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+resetVector 0 0 0 1 2
+interruptVector 0 4 8 3A 2
+globalData 1 20 20 4 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
